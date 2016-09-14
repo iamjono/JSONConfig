@@ -40,17 +40,4 @@ public struct JSONConfig {
 			return .none
 		}
 	}
-	// TODO
-//	public func addValues(dictionary:NSDictionary) throws {
-//		let thisFile = File(name)
-//
-//		if thisFile.exists {
-//			if !dictionary.write(toFile: thisFile.realPath, atomically: false) {
-//				print("File not written successfully")
-//				throw ConfigError.FileNotWritten
-//			}
-//		} else {
-//			throw ConfigError.FileDoesNotExist
-//		}
-//	}
 }
