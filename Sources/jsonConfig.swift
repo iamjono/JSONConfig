@@ -27,13 +27,13 @@ public struct JSONConfig {
 		}
 	}
 
-	public func getValues() -> NSDictionary?{
+	public func getValues() -> Dictionary<String, Any>?{
 		let thisFile = File(name)
 		do {
 			try thisFile.open(.read, permissions: .readUser)
 			defer { thisFile.close() }
 			let txt = try thisFile.readString()
-			let dict = try txt.jsonDecode() as! NSDictionary
+			let dict = try txt.jsonDecode() as! Dictionary<String, Any>
 			return dict
 		} catch {
 			print(error)
