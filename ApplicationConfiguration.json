@@ -1,0 +1,8 @@
+{
+	"token": "XXXtokenZZZ",
+	"postgresdbname": "dbname",
+	"postgreshost": "localhost",
+	"postgresport": 5432,
+	"postgrespwd": "pwd",
+	"postgresuser": "user"
+}
