@@ -26,13 +26,19 @@ In the "Build Phases" for your target binary, add a "Copy Files" phase if one do
 Add your JSON file to the file list, with a destination of "Resources". 
 When you build your project within Xcode this JSON file will be copied next to your executable binary.
 
-When deploying on a server, make sure the JSON file is in the same relative position, and change the values to those appropriate to the system.
-
 ### Example usage:
 
 ``` swift
+// perhaps in main.swift
+#if os(Linux)
+	let FileRoot = "/home/ubuntu/settings/"
+#else
+	let FileRoot = ""
+#endif
+
+// wherever you like
 func GetAPIKey() -> String {
-	if let config = JSONConfig(name: "ApplicationConfiguration.json") {
+	if let config = JSONConfig(name: "\(FileRoot)ApplicationConfiguration.json") {
 		//2
 		let dict = config.getValues()!
 		let apiKey = dict["apikey"] as! String
@@ -47,3 +53,8 @@ func GetAPIKey() -> String {
 	return ""
 }
 ```
+
+For Linux usage, use a context switch for location, like:
+
+
+
