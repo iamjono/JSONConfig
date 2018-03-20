@@ -10,7 +10,7 @@ It makes no sense to include these in compiled binaries as they will vary betwee
 Include the JSON Config dependancy in your project's Package.swift file:
 
 ``` swift
- .Package(url: "https://github.com/iamjono/JSONConfig.git", majorVersion: 0, minor: 1)
+ .Package(url: "https://github.com/iamjono/JSONConfig.git", majorVersion: 3)
 ```
 
 After changing your Package.swift file, remember to rebuild your Xcode project:
